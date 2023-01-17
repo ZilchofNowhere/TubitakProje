@@ -2,36 +2,36 @@ import random
 import time
 import matplotlib.pyplot as plt
 # ------------------------------------------------------------------------------
-a = 6
-b = 7
-c = 10
+
+a: float = 6
+b: float = 7
+c: float = 10
 
 def problem2(X):
     global a, b, c
     u = X[0]
     m = X[1]
 
-    x1 = u / (m**2 + 1)
-    y1 = m * x1
+    xd = (c * b) / (m * c + b - m * a)
+    yd = m * xd
 
-    x2 = a * u / (a + m * b)
-    y2 = b * u / (a + m * b)
+    xg = u * a / (m * b + a)
+    yg = u * b / (m * b + a)
 
-    x3 = b * c / (b - m * (a - c))
-    y3 = m * x3
+    xf = u / (m**2 + 1)
+    yf = m * xf
 
-    s = b * c / 2
-    s1 = (x1 * y3  - x3 * y1) / 2
-    s2 = u * y1 / 2
-    s3 = abs(c * y2 + x2 * y1 - x1 * y2 - u * y1) / 2
-    s4 = abs(a * y3 + x3 * y1 + x1 * y2 + x2 * b - a * y2 - x2 * y1 - x1 * y3 - x3 * b) / 2
+    s = abs(c * b) / 2
+    s1 = abs(xf * yg - xg * yf) / 2
+    s2 = abs(u * yf) / 2
+    s3 = abs((a * yg + xg * yf + xf * yd + xd * b) - (xg * b + xf * yg + xd * yf + a * yd)) / 2
+    s4 = abs((xd * yf + c * yd) - (xf * yd + u * yf)) / 2
 
     q = s / 4
     return abs(s1 - q) + abs(s2 - q) + abs(s3 - q) + abs(s4 - q)
 
 
-  
-bounds = [(-6,6), (-6,6)]  # upper and lower bounds of variables
+bounds = [(-20,20), (-20,20)]  # upper and lower bounds of variables
 nv = 2  # number of variables
 mm = -1  # if minimization problem, mm = -1; if maximization problem, mm = 1
   
