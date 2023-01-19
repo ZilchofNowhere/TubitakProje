@@ -8,7 +8,7 @@ def problem4(X):
     m = X[0]
     xe = X[1]
     yf = X[2]
-    global a, b, c, d, e
+    global xa, ya, xd, yd, xc
 
     xh = (m**2 * xe + m * yf) / (m**2 + 1)
     yh = (m**2 * yf - m * xe) / (m**2 + 1)
