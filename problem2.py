@@ -1,5 +1,3 @@
-import ParticleSwarm as ps
-
 a: float = 6
 b: float = 7
 c: float = 10
