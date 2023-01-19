@@ -1,5 +1,3 @@
-import ParticleSwarm as ps
-
 a: float = 5
 b: float = 7
 c: float = 8
@@ -34,20 +32,3 @@ def problem3(X):
 
     q = s / 4
     return abs(s1 - q) + abs(s2 - q) + abs(s3 - q) + abs(s4 - q)
-
-
-dimensions=3
-dimension_bounds=[-6,6]
-bounds=[0]*dimensions #creating 5 dimensional bounds
-for i in range(dimensions):
-    bounds[i]=dimension_bounds
-
-#creates bounds [[x1,x2],[x3,x4],[x5,x6]....]    
-    
-p=60 #shouldn't really change 
-vmax=(dimension_bounds[1]-dimension_bounds[0])*0.75
-c1=2.8 #shouldn't really change
-c2=1.3 #shouldn't really change
-tol=0.00000000000001
-
-ps.particleswarm(problem3, bounds,p,c1,c2,vmax,tol)
