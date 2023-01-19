@@ -1,5 +1,3 @@
-import ParticleSwarm as ps
-
 # köşe koordinatları
 a: float = 0
 b: float = 4
@@ -21,19 +19,3 @@ def problem1(X):
     s3 = abs(d * x2 - c * y2) / 2
 
     return abs(s1 - s / 3) + abs(s2 - s / 3) + abs(s3 - s / 3)
-
-dimensions=2
-dimension_bounds=[-6,6]
-bounds=[0]*dimensions #creating 5 dimensional bounds
-for i in range(dimensions):
-    bounds[i]=dimension_bounds
-
-#creates bounds [[x1,x2],[x3,x4],[x5,x6]....]    
-    
-p=60 #shouldn't really change 
-vmax=(dimension_bounds[1]-dimension_bounds[0])*0.75
-c1=2.8 #shouldn't really change
-c2=1.3 #shouldn't really change
-tol=0.00000000000001
-
-ps.particleswarm(problem1, bounds,p,c1,c2,vmax,tol)
